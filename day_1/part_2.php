@@ -1,6 +1,6 @@
 <?php
 
-function sum_of_two ($list) {
+function sum_of_three ($list) {
 
     $len = count($list);
 
@@ -8,12 +8,16 @@ function sum_of_two ($list) {
 
         for ($k=1; $k < $len - 1 ; $k++) { 
            
-            $sum = $list[$i] + $list[$k];
+            for ($m=1; $m < $len - 1 ; $m++) { 
 
-            if ($sum == 2020) {
+                $sum = $list[$i] + $list[$k] + $list[$m];
 
-                $multip = $list[$i] * $list[$k];
-                return $multip;
+                if ($sum == 2020) {
+
+                    $multip = $list[$i] * $list[$k] * $list[$m];
+                    return $multip;
+
+                }
             }
         }
 
@@ -34,23 +38,11 @@ function main () {
         }
        
     fclose($myfile);    
-    $multi = sum_of_two($expenses);
+    $multi = sum_of_three($expenses);
     echo $multi;
         
 }
 
 main();
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
