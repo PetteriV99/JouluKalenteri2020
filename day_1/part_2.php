@@ -8,17 +8,25 @@ function sum_of_three ($list) {
 
         for ($k=1; $k < $len - 1 ; $k++) { 
            
-            for ($m=1; $m < $len - 1 ; $m++) { 
+            $sum = $list[$i] + $list[$k];
 
-                $sum = $list[$i] + $list[$k] + $list[$m];
+            if ($sum < 2020) {
 
-                if ($sum == 2020) {
-
-                    $multip = $list[$i] * $list[$k] * $list[$m];
-                    return $multip;
-
-                }
+                $under = $list[$i] + $list[$k];
+                $multi =  $list[$i] * $list[$k];
             }
+            
+        }
+
+        for ($n=1; $n < $len - 2 ; $n++) { 
+
+            if (($under + $list[$n]) == 2020) {
+
+                $multip = $multi * $list[$n];
+                return $multip;
+
+            }
+            
         }
 
     }
